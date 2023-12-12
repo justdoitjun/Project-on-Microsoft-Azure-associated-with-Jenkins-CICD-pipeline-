@@ -4,8 +4,7 @@ pipeline{
         stage('mvn build'){
             steps{
                 echo 'mvn install 1'
-                sh 'chmod +x pom.xml'
-                sh 'mvn clean package'
+                sh './mvnw clean package'
 
                 // dir('final-service'){
                 // }
