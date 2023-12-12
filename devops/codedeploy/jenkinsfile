@@ -1,0 +1,29 @@
+pipeline{
+    agent any
+    environment {
+
+    }
+    stages {
+        stage('mvn build'){
+            steps{
+               dir('bfr-admin'){
+                sh 'java -cp /bitnami/jenkins/home/plugins/maven-plugin/WEB-INF/lib/maven35-agent-1.14.jar:
+                    /bitnami/jenkins/home/tools/hudson.tasks.Maven_MavenInstallation/maven396/boot/plexus-classworlds-2.7.0.jar:
+                    /bitnami/jenkins/home/tools/hudson.tasks.Maven_MavenInstallation/maven396/conf/logging jenkins.maven3.agent.Maven35Main 
+                    /bitnami/jenkins/home/tools/hudson.tasks.Maven_MavenInstallation/maven396
+                    /bitnami/jenkins/home/war/WEB-INF/lib/remoting-3131.vf2b_b_798b_ce99.jar
+                    /bitnami/jenkins/home/plugins/maven-plugin/WEB-INF/lib/maven35-interceptor-1.14.jar
+                    /bitnami/jenkins/home/plugins/maven-plugin/WEB-INF/lib/maven3-interceptor-commons-1.14.jar 44385'
+                sh 'mvn clean package'
+               }
+            }
+        }
+        stage('code upload'){
+            steps{
+                sh ""
+                if [[]]
+                ""
+            }
+        }
+    }
+}

@@ -1,0 +1,22 @@
+pipeline{
+    agent any
+    stages {
+        stage('mvn build'){
+            steps{
+                echo 'mvn install 1'
+                sh 'chmod +x pom.xml'
+                sh 'mvn clean package'
+
+                // dir('final-service'){
+                // }
+                //sh 'mvn -B -f /bitnami/jenkins/home/workspace/justdoitjun-cicd/pom.xml install'
+               //sh 'mvn -Dmaven.test.failure.ignore=true -N -f /bitnami/jenkins/home/workspace/justdoitjun-cicd/pom.xml clean package'
+            }
+        }
+        // stage('code upload'){
+        //     steps{
+        //         echo 'code upload'
+        //     }
+        // }
+    }
+}

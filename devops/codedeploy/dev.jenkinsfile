@@ -1,0 +1,21 @@
+pipeline{
+    agent any
+    environment {
+
+    }
+    stages {
+        stage('mvn build'){
+            steps{
+               dir('bfr-admin'){
+                echo 'code mvn build'
+                sh 'mvn clean install'
+               }
+            }
+        }
+        stage('code upload'){
+            steps{
+                echo 'code upload'
+            }
+        }
+    }
+}
