@@ -4,7 +4,7 @@ pipeline{
         stage('mvn build'){
             steps{
                 echo 'mvn clean package'
-                sh 'sudo chmod +x mvnw'
+                sh 'chmod +x mvnw'
                 sh './mvnw clean package'
 
                 // dir('final-service'){
