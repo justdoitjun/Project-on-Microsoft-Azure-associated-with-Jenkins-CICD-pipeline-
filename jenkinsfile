@@ -3,13 +3,15 @@ pipeline{
     stages {
         stage('mvn build'){
             steps{
-                echo 'mvn install 1'
+                echo 'mvn clean package'
+                sh 'sudo chmod +x mvnw'
                 sh './mvnw clean package'
 
                 // dir('final-service'){
                 // }
                 //sh 'mvn -B -f /bitnami/jenkins/home/workspace/justdoitjun-cicd/pom.xml install'
                //sh 'mvn -Dmaven.test.failure.ignore=true -N -f /bitnami/jenkins/home/workspace/justdoitjun-cicd/pom.xml clean package'
+         
             }
         }
         // stage('code upload'){
