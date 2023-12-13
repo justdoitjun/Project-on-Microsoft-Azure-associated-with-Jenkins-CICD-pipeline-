@@ -27,5 +27,8 @@ pipeline{
 sh 'az storage blob upload  --account-name "$storageAccountName" --account-key "$accountKey" --container-name "$containerName" --file "$localFilePath" --name "$blobName" '
 	}
         }
+	stage('code deploy'){
+		sh 'az webapp deploy --resource-group <group-name> --name <app-name> --src-path ./<package-name>.war'
+	}
     }
 }
