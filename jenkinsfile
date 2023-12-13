@@ -8,12 +8,12 @@ pipeline{
                 containerName="codedeploy"
                 localFilePath="/bitnami/jenkins/home/workspace/justdoitjun/target/finalService-0.0.1-SNAPSHOT.war"
 		localFilePath2="/bitnami/jenkins/home/workspace/justdoitjun/target/finalservice5.zip"
-                blobName="finalservice5"
+                blobName="finalservice5.war"
                 blobName2="finalservice5.zip"
 
 		groupName="finalservice5"
 		appName="justdoitjun"
-		blobPath="https://justdoitjunblob.blob.core.windows.net/codedeploy/finalservice5"
+		blobPath="https://justdoitjunblob.blob.core.windows.net/codedeploy/finalservice5.war"
     }
     tools {
 			maven('maven396')
@@ -29,11 +29,12 @@ pipeline{
         stage('code upload'){
 		        steps{
 			        echo 'code upload'
-sh 'zip finalservice5.zip ./*'
-sh 'az storage blob upload --overwrite --account-name "$storageAccountName" --account-key "$accountKey" --container-name "$containerName" --file "$localFilePath" --name "$blobName2" '
+//zip
+//sh 'zip finalservice5.zip ./*'
+//sh 'az storage blob upload --overwrite --account-name "$storageAccountName" --account-key "$accountKey" --container-name "$containerName" --file "$localFilePath" --name "$blobName2" '
 
 //로컬 파일을 Blob Storage에 업로드
-//sh 'az storage blob upload --overwrite --account-name "$storageAccountName" --account-key "$accountKey" --container-name "$containerName" --file "$localFilePath" --name "$blobName" '
+sh 'az storage blob upload --overwrite --account-name "$storageAccountName" --account-key "$accountKey" --container-name "$containerName" --file "$localFilePath" --name "$blobName" '
 	}
         }
 	stage('code deploy'){
@@ -41,8 +42,10 @@ sh 'az storage blob upload --overwrite --account-name "$storageAccountName" --ac
 		echo 'code deploy'
 		sh 'az login'
 		sh 'az account set --subscription "Azure for Students"'
+		//zip
 		sh 'az webapp deploy --resource-group "$groupName" --name "$appName" --src-url "$blobPath" --type zip'
 		//sh 'az webapp deploy --resource-group "$groupName" --name "$appName" --src-url "$blobPath"'
+		sh 'az webapp deploy --resource-group "$groupName" --name "$appName" --src-url "$blobPath" --type war'
 
 		//sh 'az webapp deploy --resource-group "$groupName" --name "$appName" --src-path ./<package-name>.war'
 		}
