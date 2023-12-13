@@ -1,7 +1,7 @@
 pipeline{
     agent any
     envrionment{
-                # Azure Blob Storage 계정 정보 설정
+                // Azure Blob Storage 계정 정보 설정
                 resourceGroupName="finalservice5"
                 storageAccountName="justdoitjunblob"
                 containerName="codedeploy"
