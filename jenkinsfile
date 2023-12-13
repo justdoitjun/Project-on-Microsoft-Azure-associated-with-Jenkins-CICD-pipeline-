@@ -10,7 +10,7 @@ pipeline{
     }
     tools {
 			maven('maven396')
-            azure-cli('0.9')
+            azure-cli('azure-cli0.9')
     }
     stages {
         stage('mvn build'){
