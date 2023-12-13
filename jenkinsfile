@@ -5,7 +5,7 @@ pipeline{
             steps{
                 echo 'mvn clean package'
                 sh 'chmod +x mvnw'
-                sh './mvnw clean package'
+                sh 'mvn clean package'
 
                 // dir('final-service'){
                 // }
