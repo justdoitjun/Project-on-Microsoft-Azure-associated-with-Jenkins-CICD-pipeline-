@@ -8,10 +8,9 @@ pipeline{
                 containerName="codedeploy"
                 localFilePath="/bitnami/jenkins/home/workspace/justdoitjun/target/finalService-0.0.1-SNAPSHOT.war"
                 blobName="finalservice5"
-
-								groupName="finalservice5"
-								appName="justdoitjun"
-								blobPath="https://justdoitjunblob.blob.core.windows.net/codedeploy/finalservice5"
+		groupName="finalservice5"
+		appName="justdoitjun"
+		blobPath="https://justdoitjunblob.blob.core.windows.net/codedeploy/finalservice5"
     }
     tools {
 			maven('maven396')
