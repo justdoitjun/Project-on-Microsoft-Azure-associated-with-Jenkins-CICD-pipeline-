@@ -6,7 +6,8 @@ pipeline{
                 storageAccountName="justdoitjunblob"
                 accountKey="DefaultEndpointsProtocol=https;AccountName=justdoitjunblob;AccountKey=5v2XfQvfqruNpiQmdfoZbLJUMLtiyZ/CB2RZsN+T5jn8PTQbN/BatHH9JdIgFdkb12NH0MsG0OOR+ASti7AbXA==;EndpointSuffix=core.windows.net"
                 containerName="codedeploy"
-                localFilePath="/bitnami/jenkins/home/workspace/justdoitjun/target/service5.tar"
+                localFilePath="/bitnami/jenkins/home/workspace/justdoitjun/target/finalService-0.0.1-SNAPSHOT.war"
+                //localFilePath="/bitnami/jenkins/home/workspace/justdoitjun/target/service5.tar"
                 blobName="finalservice5"
     }
     tools {
@@ -25,7 +26,7 @@ pipeline{
 		        steps{
 			        echo 'code upload'
              //   sh 'tar cvf /bitnami/jenkins/home/workspace/justdoitjun/target/*.war ./*'
-                sh 'tar cvf service5.tar /bitnami/jenkins/home/workspace/justdoitjun/target/*.war'
+               // sh 'tar cvf service5.tar /bitnami/jenkins/home/workspace/justdoitjun/target/*.war'
 
 //로컬 파일을 Blob Storage에 업로드
 sh 'az storage blob upload  --account-name "$storageAccountName" --account-key "$accountKey" --container-name "$containerName" --file "$localFilePath" --name "$blobName" '
