@@ -35,7 +35,7 @@ sh 'az storage blob upload --overwrite --account-name "$storageAccountName" --ac
 		echo 'code deploy'
 		sh 'az login'
 		sh 'az account set --subscription "Azure for Students"'
-		sh 'az webapp deploy --resource-group "$groupName" --name "$appName" --src-url "$blobPath" --type war'
+		sh 'az webapp deploy --resource-group "$groupName" --name "$appName" --src-url "$blobPath"'
 		//sh 'az webapp deploy --resource-group "$groupName" --name "$appName" --src-path ./<package-name>.war'
 		}
 	}
