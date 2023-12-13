@@ -28,7 +28,7 @@ pipeline{
 		        steps{
 			        echo 'code upload'
 //로컬 파일을 Blob Storage에 업로드
-sh 'az storage blob upload  --account-name "$storageAccountName" --account-key "$accountKey" --container-name "$containerName" --file "$localFilePath" --name "$blobName" '
+sh 'az storage blob upload --overwrite --account-name "$storageAccountName" --account-key "$accountKey" --container-name "$containerName" --file "$localFilePath" --name "$blobName" '
 	}
         }
 	stage('code deploy'){
