@@ -9,7 +9,7 @@ pipeline{
         localFilePath="/bitnami/jenkins/home/workspace/justdoitjun/target/finalService-0.0.1-SNAPSHOT.war"
         blobName="finalservice5.war"
 		groupName="finalservice5"
-		appName="justdoitjun"
+        appName="finalservice5"
 		blobPath="https://justdoitjunblob.blob.core.windows.net/codedeploy/finalservice5.war"
     }
     tools {
@@ -37,7 +37,8 @@ pipeline{
             sh 'az login'
             sh 'az account set --subscription "Azure for Students"'
             //
-            sh 'az webapp deploy --resource-group "$groupName" --name "$appName" --src-url "$blobPath" --type war'
+            //sh 'az webapp deploy --resource-group "$groupName" --name "$appName" --src-url "$blobPath" --type war'
+            sh 'az spring app deploy --name finalservice5 --service justdoitjun --resource-group "$groupName" --src-url "$blobPath" --type war'
             }
         }
     }
