@@ -34,6 +34,7 @@ sh 'az storage blob upload --overwrite --account-name "$storageAccountName" --ac
 	stage('code deploy'){
 		steps{
 		echo 'code deploy'
+		sh 'az login'
 		sh 'az webapp deploy --resource-group "$groupName" --name "$appName" --src-url "$blobPath" --type war'
 		//sh 'az webapp deploy --resource-group "$groupName" --name "$appName" --src-path ./<package-name>.war'
 		}
