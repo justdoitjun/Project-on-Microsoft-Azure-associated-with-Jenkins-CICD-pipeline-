@@ -11,7 +11,7 @@ pipeline{
 
 								groupName="finalService5"
 								appName="justdoitjun"
-								blobPath="target"
+								blobPath="https://justdoitjunblob.blob.core.windows.net/codedeploy/finalservice5"
     }
     tools {
 			maven('maven396')
