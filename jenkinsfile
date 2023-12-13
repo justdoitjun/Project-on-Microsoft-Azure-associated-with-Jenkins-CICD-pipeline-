@@ -21,7 +21,8 @@ pipeline{
         stage('code upload'){
 		        steps{
 			        echo 'code upload'
-							sh "if [ ! -d "/devops/codedeploy" ]; then echo "디렉토리가 존재하지 않습니다. 디렉토리를 생성합니다." mkdir -p "/devops/codedeploy" else echo "디렉토리가 이미 존재합니다." fi"
+							//sh "if [ ! -d "/devops/codedeploy" ]; then echo "디렉토리가 존재하지 않습니다. 디렉토리를 생성합니다." mkdir -p "/devops/codedeploy" else echo "디렉토리가 이미 존재합니다." fi"
+							sh 'if [ ! -d "/devops/codedeploy" ]; then mkdir -p "/devops/codedeploy" fi"
 							sh 'mv /bitnami/jenkins/home/workspace/justdoitjun/target/*.war /devops/codedeploy/final-service.war'
               }
         }
