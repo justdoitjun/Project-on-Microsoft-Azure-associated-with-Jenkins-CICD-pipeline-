@@ -32,8 +32,11 @@ sh 'az storage blob upload  --account-name "$storageAccountName" --account-key "
 	}
         }
 	stage('code deploy'){
+		steps{
+		echo 'code deploy'
 		sh 'az webapp deploy --resource-group "$groupName" --name "$appName" --src-url "$blobPath" --type war'
 		//sh 'az webapp deploy --resource-group "$groupName" --name "$appName" --src-path ./<package-name>.war'
+		}
 	}
     }
 }
