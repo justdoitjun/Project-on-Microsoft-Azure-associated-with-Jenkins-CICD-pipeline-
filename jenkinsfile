@@ -8,6 +8,10 @@ pipeline{
                 containerName="codedeploy"
                 localFilePath="/bitnami/jenkins/home/workspace/justdoitjun/target/finalService-0.0.1-SNAPSHOT.war"
                 blobName="finalservice5"
+
+								groupName="finalService5"
+								resourceGroup=""
+								tomcatPath=""
     }
     tools {
 			maven('maven396')
