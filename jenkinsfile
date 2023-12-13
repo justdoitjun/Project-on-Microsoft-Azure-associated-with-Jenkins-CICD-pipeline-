@@ -12,7 +12,7 @@ pipeline{
         appName="finalservice5"
 		blobPath="https://justdoitjunblob.blob.core.windows.net/codedeploy/finalservice5.war"
         clientID="bing74700@korea.ac.kr"
-        clientSecret="vnfmsthskan77!"
+        clientSecret="wjsrnr1emd!"
     }
     tools {
 			maven('maven396')
@@ -37,7 +37,7 @@ pipeline{
             echo 'code deploy'
             //Azure 로그인
             //sh 'az login'
-            sh 'az login --service-principal -u $clientID -p $clientSecret --tenant $tenantID'
+            sh 'az login --service-principal -u $clientID -p $clientSecret'
             sh 'az account set --subscription "Azure for Students"'
             //
             //sh 'az webapp deploy --resource-group "$groupName" --name "$appName" --src-url "$blobPath" --type war'
