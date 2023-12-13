@@ -11,7 +11,7 @@ pipeline{
 
 								groupName="finalService5"
 								appName="justdoitjun"
-								tomcatPath="target"
+								blobPath="target"
     }
     tools {
 			maven('maven396')
@@ -32,7 +32,8 @@ sh 'az storage blob upload  --account-name "$storageAccountName" --account-key "
 	}
         }
 	stage('code deploy'){
-		sh 'az webapp deploy --resource-group "$groupName" --name "$appName" --src-path ./<package-name>.war'
+		sh 'az webapp deploy --resource-group "$groupName" --name "$appName" --src-url "$blobPath --type war'
+		//sh 'az webapp deploy --resource-group "$groupName" --name "$appName" --src-path ./<package-name>.war'
 	}
     }
 }
