@@ -1,5 +1,13 @@
 pipeline{
     agent any
+    envrionment{
+                # Azure Blob Storage 계정 정보 설정
+                resourceGroupName="finalservice5"
+                storageAccountName="justdoitjunblob"
+                containerName="codedeploy"
+                localFilePath="/bitnami/jenkins/home/workspace/justdoitjun/target/"
+                blobName="finalservice5"
+    }
     tools {
 			maven('maven396')
     }
@@ -22,12 +30,16 @@ pipeline{
 		        steps{
 			        echo 'code upload'
 				//sh "if [ ! -d "/devops/codedeploy" ]; then echo "디렉토리가 존재하지 않습니다. 디렉토리를 생성합니다." mkdir -p "/devops/codedeploy" else echo "디렉토리가 이미 존재합니다." fi"
-				sh '''
-				if [[ ! -d "/devops/codedeploy" ]]; then
-				mkdir -p /devops/codedeploy
-				fi
-				'''
-				sh 'mv /bitnami/jenkins/home/workspace/justdoitjun/target/*.war /devops/codedeploy/final-service.war'
+				// sh '''
+				// if [[ ! -d "/devops/codedeploy" ]]; then
+				// mkdir -p /devops/codedeploy
+				// fi
+				// '''
+				//sh 'mv /bitnami/jenkins/home/workspace/justdoitjun/target/*.war /devops/codedeploy/final-service.war'
+
+                sh 'tar cvf /bitnami/jenkins/home/workspace/justdoitjun/target/*.war ./*'
+# 로컬 파일을 Blob Storage에 업로드
+sh 'az storage blob upload --account-name $storageAccountName --account-key $accountKey --type block --destination-path $blobName --type block --connection-string "DefaultEndpointsProtocol=https;AccountName=$storageAccountName;AccountKey=$accountKey;EndpointSuffix=core.windows.net" --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type block --type'
               }
         }
     }
