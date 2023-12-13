@@ -1,6 +1,6 @@
 pipeline{
     agent any
-    envrionment{
+    environment{
                 // Azure Blob Storage 계정 정보 설정
                 resourceGroupName="finalservice5"
                 storageAccountName="justdoitjunblob"
