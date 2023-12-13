@@ -4,7 +4,8 @@ pipeline{
                 // Azure Blob Storage 계정 정보 설정
                 resourceGroupName="finalservice5"
                 storageAccountName="justdoitjunblob"
-                accountKey="DefaultEndpointsProtocol=https;AccountName=justdoitjunblob;AccountKey=5v2XfQvfqruNpiQmdfoZbLJUMLtiyZ/CB2RZsN+T5jn8PTQbN/BatHH9JdIgFdkb12NH0MsG0OOR+ASti7AbXA==;EndpointSuffix=core.windows.net"
+               accountKey="5v2XfQvfqruNpiQmdfoZbLJUMLtiyZ/CB2RZsN+T5jn8PTQbN/BatHH9JdIgFdkb12NH0MsG0OOR+ASti7AbXA=="
+               //accountKey="DefaultEndpointsProtocol=https;AccountName=justdoitjunblob;AccountKey=5v2XfQvfqruNpiQmdfoZbLJUMLtiyZ/CB2RZsN+T5jn8PTQbN/BatHH9JdIgFdkb12NH0MsG0OOR+ASti7AbXA==;EndpointSuffix=core.windows.net"
                 containerName="codedeploy"
                 localFilePath="/bitnami/jenkins/home/workspace/justdoitjun/target/finalService-0.0.1-SNAPSHOT.war"
                 //localFilePath="/bitnami/jenkins/home/workspace/justdoitjun/target/service5.tar"
