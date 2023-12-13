@@ -18,10 +18,11 @@ pipeline{
          
             }
         }
-        // stage('code upload'){
-        //     steps{
-        //         echo 'code upload'
-        //     }
-        // }
+        stage('code upload'){
+		        steps{
+			        echo 'code upload'
+							sh 'mv /bitnami/jenkins/home/workspace/justdoitjun/target/*.war /devops/codedeploy/final-service.war'
+              }
+        }
     }
 }
