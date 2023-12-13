@@ -7,6 +7,7 @@ pipeline{
                accountKey="5v2XfQvfqruNpiQmdfoZbLJUMLtiyZ/CB2RZsN+T5jn8PTQbN/BatHH9JdIgFdkb12NH0MsG0OOR+ASti7AbXA=="
                 containerName="codedeploy"
                 localFilePath="/bitnami/jenkins/home/workspace/justdoitjun/target/finalService-0.0.1-SNAPSHOT.war"
+		localFilePath2="/bitnami/jenkins/home/workspace/justdoitjun/target/finalservice5.zip"
                 blobName="finalservice5"
 		groupName="finalservice5"
 		appName="justdoitjun"
@@ -26,8 +27,11 @@ pipeline{
         stage('code upload'){
 		        steps{
 			        echo 'code upload'
-//로컬 파일을 Blob Storage에 업로드
+sh 'zip finalservice5.zip ./*'
 sh 'az storage blob upload --overwrite --account-name "$storageAccountName" --account-key "$accountKey" --container-name "$containerName" --file "$localFilePath" --name "$blobName" '
+
+//로컬 파일을 Blob Storage에 업로드
+//sh 'az storage blob upload --overwrite --account-name "$storageAccountName" --account-key "$accountKey" --container-name "$containerName" --file "$localFilePath" --name "$blobName" '
 	}
         }
 	stage('code deploy'){
@@ -35,7 +39,9 @@ sh 'az storage blob upload --overwrite --account-name "$storageAccountName" --ac
 		echo 'code deploy'
 		sh 'az login'
 		sh 'az account set --subscription "Azure for Students"'
-		sh 'az webapp deploy --resource-group "$groupName" --name "$appName" --src-url "$blobPath"'
+		sh 'az webapp deploy --resource-group "$groupName" --name "$appName" --src-url "$blobPath" --type zip'
+		//sh 'az webapp deploy --resource-group "$groupName" --name "$appName" --src-url "$blobPath"'
+
 		//sh 'az webapp deploy --resource-group "$groupName" --name "$appName" --src-path ./<package-name>.war'
 		}
 	}
