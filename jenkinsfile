@@ -1,12 +1,15 @@
 pipeline{
     agent any
+    tools {
+			maven('maven3.96')
+    }
     stages {
         stage('mvn build'){
             steps{
                 echo 'mvn clean package'
                 sh 'chmod +x mvnw'
-		            //sh 'mvn clean package'
-								sh './mvnw clean package'
+		            sh 'mvn clean package'
+								//sh './mvnw clean package'
 
                 // dir('final-service'){
                 // }
