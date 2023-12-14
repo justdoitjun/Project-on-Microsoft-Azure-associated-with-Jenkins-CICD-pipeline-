@@ -252,6 +252,7 @@
             <div class="text-xl font-semibold">   Today's birthdays </div>
         </div>
 
+        
         <div class="space-y-6">
             <div class="sm:space-y-8 space-y-6 pb-2">
 
