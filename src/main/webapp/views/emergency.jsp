@@ -20,13 +20,14 @@
         margin-left: 30vi;
     }
 </style>
+
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
 <script>
-    // $(()=>{
-    //     Swal.fire({
-    //         template: "#my-template"
-    //     });
-    // })
+    $(()=>{
+        Swal.alert({
+            template: "#my-template"
+        });
+    })
 </script>
 <body>
 
@@ -252,7 +253,7 @@
             <div class="text-xl font-semibold">   Today's birthdays </div>
         </div>
 
-        
+
         <div class="space-y-6">
             <div class="sm:space-y-8 space-y-6 pb-2">
 

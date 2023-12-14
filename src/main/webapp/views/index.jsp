@@ -12,6 +12,10 @@
 <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://kit.fontawesome.com/5f198f7eda.js" crossorigin="anonymous"></script>
+
+<!-- SweetAlert2 JS -->
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.all.min.js"></script>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -37,6 +41,9 @@
     <link rel="stylesheet" href="/assets/css/uikit.css">
     <link rel="stylesheet" href="/assets/css/style.css">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@10/dist/sweetalert2.min.css">
+
 
     <!-- HighChart -->
     <script src="https://code.highcharts.com/highcharts.js"></script>
@@ -47,6 +54,18 @@
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
 </head>
+<script>
+    $(()=>{
+        Swal.fire({
+            icon: 'info', // 아이콘 유형 (info, success, error, warning 등)
+            title: '알림',
+            text: '[긴급접검]잠시 시스템 점검 중입니다.',
+        });
+
+        alert('시스템 긴급점검 중!!');
+
+    })
+</script>
 <body>
 
 
