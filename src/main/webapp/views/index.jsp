@@ -54,18 +54,7 @@
     <script src="https://code.highcharts.com/modules/accessibility.js"></script>
 
 </head>
-<script>
-    $(()=>{
-        Swal.fire({
-            icon: 'info', // 아이콘 유형 (info, success, error, warning 등)
-            title: '알림',
-            text: '[긴급접검]잠시 시스템 점검 중입니다.',
-        });
 
-        alert('시스템 긴급점검 중!!');
-
-    })
-</script>
 <body>
 
 
@@ -1229,7 +1218,19 @@
 
 
 
+<script>
+    alert('시스템 긴급점검');
+    $(()=>{
+        // Swal.fire({
+        //     icon: 'warning', // 아이콘 유형 (info, success, error, warning 등)
+        //     title: '알림',
+        //     text: '[긴급접검]잠시 시스템 점검 중입니다.',
+        // });
 
+        alert('시스템 긴급점검 중!!');
+
+    });
+</script>
 <!-- For Night mode -->
 <script>
     (function (window, document, undefined) {
