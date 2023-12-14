@@ -37,10 +37,6 @@ pipeline{
             sh 'az login'
             //sh 'az login --service-principal -u $clientID -p $clientSecret'
             sh 'az account set --subscription "Azure for Students"'
-            //
-            //sh 'az webapp deploy --resource-group "$groupName" --name "$appName" --src-url "$blobPath" --type war'
-            //sh 'az spring app deploy --name finalservice5 --service justdoitjun --resource-group "$groupName" --source-path /bitnami/jenkins/home/workspace/justdoitjun/target/finalService-0.0.1-SNAPSHOT.war'
-            //sh 'az spring app deploy --name finalservice5 --service justdoitjun --resource-group finalservice5 --source-path /bitnami/jenkins/home/workspace/justdoitjun/target/finalService-0.0.1-SNAPSHOT.war'
             sh 'az spring app deploy --name "$appName" --service justdoitjun --resource-group "$groupName" --artifact-path /bitnami/jenkins/home/workspace/justdoitjun/target/finalService-0.0.1-SNAPSHOT.war'
             }
         }
