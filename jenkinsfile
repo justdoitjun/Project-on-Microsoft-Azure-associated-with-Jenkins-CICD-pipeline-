@@ -11,8 +11,6 @@ pipeline{
 		groupName="finalservice5"
         appName="finalservice5"
 		blobPath="https://justdoitjunblob.blob.core.windows.net/codedeploy/finalservice5.war"
-        clientID="bing74700@korea.ac.kr"
-        clientSecret="wjsrnr1emd!"
     }
     tools {
 			maven('maven396')
