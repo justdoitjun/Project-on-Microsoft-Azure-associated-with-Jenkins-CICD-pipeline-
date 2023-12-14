@@ -36,6 +36,7 @@ pipeline{
             //Azure 로그인
             sh 'az login'
             //sh 'az login --service-principal -u $clientID -p $clientSecret'
+            
             sh 'az account set --subscription "Azure for Students"'
             sh 'az spring app deploy --name "$appName" --service justdoitjun --resource-group "$groupName" --artifact-path /bitnami/jenkins/home/workspace/justdoitjun/target/finalService-0.0.1-SNAPSHOT.war'
             }
