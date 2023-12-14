@@ -251,6 +251,7 @@
             <ion-icon name="gift" class="text-yellow-500 text-xl bg-yellow-50 p-1 rounded-md"></ion-icon>
             <div class="text-xl font-semibold">   Today's birthdays </div>
         </div>
+
         
         <div class="space-y-6">
             <div class="sm:space-y-8 space-y-6 pb-2">
