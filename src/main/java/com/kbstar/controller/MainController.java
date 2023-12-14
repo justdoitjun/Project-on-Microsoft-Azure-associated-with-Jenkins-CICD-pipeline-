@@ -25,9 +25,11 @@ public class MainController {
     @RequestMapping("/")
     public String main(Model model) throws Exception {
         //board 분기처리(최준혁 2023 1125)
-        List<BoardList> list = boardService.get(); // boardService 객체를 통해 get() 메서드 호출
-        model.addAttribute("boardlist", list);
-        model.addAttribute("center", "board");
+        //List<BoardList> list = boardService.get(); // boardService 객체를 통해 get() 메서드 호출
+        //model.addAttribute("boardlist", list);
+        //model.addAttribute("center", "board");
+        model.addAttribute("center", "emergency");
+
         return "index";
     }
 
