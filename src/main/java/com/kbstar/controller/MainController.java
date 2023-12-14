@@ -71,7 +71,9 @@ public class MainController {
 
     @RequestMapping("/stock")
     public String main(Model model, HttpSession session) throws Exception {
-        model.addAttribute("center",   "stock/overlook");
+        //model.addAttribute("center",   "stock/overlook");
+        model.addAttribute("center",   "stock/emergency");
+
         return "index";
     }
 
