@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
+
 
 <div class="main_content">
 
@@ -17,15 +16,12 @@
 
                 <div class="font-semibold md:text-2xl text-2xl text-gray-700 md:pt-12 pt-10"> 사랑하는 KB 가족 여러분! </div>
                 <div class="md:leading-8 leading-7"> 최근의 지속적인 </div>
-                <div class="md:leading-8 leading-7"> Don't misuse our Services. For example, don't interfere with our Services or try to access them using a method other than the interface and the instructions that we provide. You may use our Services only as permitted by law, including applicable export and re-export control laws and regulations. We may suspend or stop providing our Services to you if you do not comply with our terms or policies or if we are investigating suspected misconduct. </div>
-                <div class="md:leading-8 leading-7"> Using our Services does not give you ownership of any intellectual property rights in our Services or the content you access. You may not use content from our Services unless you obtain permission from its owner or are otherwise permitted by law. These terms do not grant you the right to use any branding or logos used in our Services. Don't remove, obscure, or alter any legal notices displayed in or along with our Services. </div>
-
-                <div class="font-semibold md:text-2xl text-2xl text-gray-700">Your content in our services</div>
-                <div class="md:leading-8 leading-7"> Some of our Services allow you to upload, submit, store, send or receive content. You retain ownership of any intellectual property rights that you hold in that content. In short, what belongs to you stays yours.</div>
-                <div class="md:leading-8 leading-7"> When you upload, submit, store, send or receive content to or through our Services, you give Front (and those we work with) a worldwide license to use, host, store, reproduce, modify, create derivative works (such as those resulting from translations, adaptations or other changes we make so that your content works better with our Services), communicate, publish, publicly perform, publicly display and distribute such content. The rights you grant in this license are for the limited purpose of operating, promoting, and improving our Services, and to develop new ones. This license continues even if you stop using our Services (for example, for a business listing you have added to Front Maps). Some Services may offer you ways to access and remove content that has been provided to that Service. Also, in some of our Services, there are terms or settings that narrow the scope of our use of the content submitted in those Services.</div>
-
-                <div class="font-semibold md:text-2xl text-xl text-gray-700"> Pay Attention </div>
-                <div class="md:leading-8 leading-7"> Our Services are very diverse, so sometimes additional terms or product requirements (including age requirements) may apply. Additional terms will be available with the relevant Services, and those additional terms become part of your agreement with us if you use.</div>
+                <div class="md:leading-8 leading-7"> 저희는 어려운 시간을 겪고 있습니다. 홍콩 H지수의 하락으로 인한 ELS 상품의 낙인은 우리에게 큰 도전을 제시하고 있습니다. 그러나 우리는 언제나 어려움을 극복하며 성장해왔습니다. 이 시점에서 우리의 단합력과 전문성이 더 중요하다고 믿습니다. </div>
+                <div class="md:leading-8 leading-7"> 처음으로, 우리는 이 문제를 부정하지 않겠습니다. 이 어려움은 우리의 열정과 노력에 대한 시험이자 기회입니다. 우리는 함께 더 강하게 나아갈 것입니다. </div>
+                <div class="md:leading-8 leading-7"> 물론, 지금은 힘들 수 있습니다. 그러나 우리는 이 어려운 시간을 통해 성장하고, 새로운 전략과 아이디어를 개발하며 미래를 준비할 수 있습니다. 우리는 혁신적인 솔루션을 찾고, 고객에게 최고의 서비스를 제공할 것입니다.</div>
+                <div class="md:leading-8 leading-7"> 우리 모두가 같은 목표를 향해 노력하고, 함께 노력하는 동안 서로에게 지지와 동기부여를 제공할 것입니다. 우리의 열정과 신념을 잃지 말고, 이 어려움을 극복하여 우리의 성공을 되찾을 것입니다.</div>
+                <div class="md:leading-8 leading-7"> 마지막으로, 언제나 열려있는 문으로 제 의견이나 아이디어를 나눌 수 있음을 기억하세요. 우리 모두가 이 어려운 시기를 통해 더 강하게 나아갈 수 있도록 함께 노력하겠습니다.</div>
+                <div class="font-semibold md:text-2xl text-xl text-gray-700"> 은행장 </div>
 
             </div>
 
